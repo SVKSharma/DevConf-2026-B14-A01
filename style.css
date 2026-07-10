@@ -358,3 +358,70 @@ body{
 .standard-card a{
     color: var(--register-button-color);
 }
+
+/* end of pricing section */
+
+
+/* footer section start here  */
+
+.footer-section-parent{
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+
+.footer-content{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    margin-bottom: 10px;
+}
+
+.social-media-logos{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.social-media-logos a i{
+    font-size: 1.5rem;
+    color: var(--footer-text-color);
+}
+
+#follow-us-snap{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--footer-text-color);
+}
+
+.footer-bottom-part-content{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.footer-bottom-part-content ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom-part-content ul li a{
+    color: var(--footer-text-color);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.footer-section-parent hr{
+    margin-top:2rem;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* footer sectoin end  */
