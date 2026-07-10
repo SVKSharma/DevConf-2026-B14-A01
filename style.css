@@ -14,6 +14,7 @@
 
    /* Fixed measurements */
    --nav-height: 98px;
+   --hero-image-height: 786px;
 
 }
 
@@ -108,3 +109,64 @@ body{
 
 
 /* Navbar end  */
+
+
+
+/* Hero section */
+
+.hero-section-parent{
+    height: var(--hero-image-height);
+    /* height: 80vh;  */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('./assets/banner.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section-content{
+    display:flex;
+    flex-direction: column;
+    height: 35rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text-content{
+    /* border:1px solid red;  */
+    flex:1;
+    width: 959px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    /* margin-top: 90px; */
+}
+.hero-text-content h1{
+    font-size: 4.8rem;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+}
+
+.hero-text-content p{
+    font-size: 1.25rem;
+    text-align: center;
+    color: white;
+}
+
+.hero-section-register-button{
+    /* width: 282px; */
+    padding: 18px 48px;
+}
+.hero-section-register-button a{
+    color: white;
+    font-weight: 700;
+    display: inline-block;
+}
+ 
+
