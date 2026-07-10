@@ -1,0 +1,110 @@
+:root{
+    /* All Colors used in DevConf */
+    --register-button-color: #2563EB;
+    --nav-links-font-color: #575757; 
+    --logo-text-color: #0D1B2A;
+    --white-background: #FFFFFF;
+    --pro-card-background-color: #0D1B2A;
+    --footer-background-color: #0D1B2A;
+    --footer-text-color: #FFFFFF;
+ 
+   /* All fonts related variable / typography  */
+   --primary-font: 'Inter', sans-serif;
+   --secondary-font: 'Open Sans', sans-serif;
+
+   /* Fixed measurements */
+   --nav-height: 98px;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Common Classes */
+
+.keep-the-content-center{
+    max-width:1320px;
+    margin: auto;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.common-button{
+    text-align: center;
+    padding: 12px 45px;
+    border-radius: 8px;
+    background-color: var(--register-button-color);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+/* --------------------------------------- */
+
+body{
+    font-family: var(--primary-font);
+    width:100%;
+    min-height:100vh;
+}
+
+.main-navbar{
+    height: var(--nav-height);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap:8px;
+}
+
+.logo-text-parent{
+    display: flex;
+    flex-direction: column;
+    color:var(--logo-text-color);
+    font-weight: 700;
+    width:94px;
+    font-size: larger;
+}
+
+.logo-img{
+    width: 32px;
+    height:32px;
+    
+}
+
+
+/* =========================== */
+
+.nav-link-parent ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 482px;
+}
+
+.nav-link-parent ul li a{
+    color: var(--nav-links-font-color);
+    font-weight: 400;
+
+}
+/* ------------------------------------------- */
+
+.register-button a{
+    color: white;
+}
+
+
+/* Navbar end  */
