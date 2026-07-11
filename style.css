@@ -14,7 +14,7 @@
    /* All fonts related variable / typography  */
    --primary-font: 'Inter', sans-serif;
    --secondary-font: 'Open Sans', sans-serif;
-
+   --logo-text-font: 'Arimo', 'Inter',sans-serif;
    /* Fixed measurements */
    --nav-height: 98px;
    --hero-image-height: 786px;
@@ -85,6 +85,7 @@ body{
     font-weight: 700;
     width:94px;
     font-size: larger;
+    font-family: var(--logo-text-font);
 }
 
 .logo-img{
