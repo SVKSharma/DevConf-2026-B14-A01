@@ -362,6 +362,203 @@ body{
 /* end of pricing section */
 
 
+/* =========== DevConf Workshop timeline section made with the help of AI ==================*/
+
+
+.timeline-section {
+  max-width: 1200px;
+  margin: 120px auto 0;
+  padding: 0 20px 80px;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.timeline-header h2 {
+  font-size: 2.5rem;
+  color: var(--logo-text-color);
+  margin-bottom: 12px;
+}
+
+.timeline-header p {
+  color: var(--nav-links-font-color);
+  font-size: 1.125rem;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+  view-timeline-name: --timeline-container;
+}
+
+.timeline-track {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 420px;
+  height: 3050px; /* Extended to match new path */
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.timeline-track path {
+  fill: none;
+  stroke: rgba(37, 99, 235, 0.18);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 8 12;
+  animation: threadFlow 12s linear infinite; /* Slowed down for smoother appearance */
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  box-shadow: 0 0 0 8px rgba(37, 99, 235, 0.16), 0 0 25px rgba(37, 99, 235, 0.45);
+  z-index: 5;
+  margin-left: -210px;
+  /* Extended path identically matching SVG */
+  offset-path: path("M210 60 C 90 140, 90 250, 210 330 C 330 410, 330 530, 210 610 C 90 690, 90 810, 210 890 C 330 970, 330 1090, 210 1170 C 90 1250, 90 1370, 210 1450 C 330 1530, 330 1650, 210 1730 C 90 1810, 90 1930, 210 2010 C 330 2090, 330 2210, 210 2290 C 90 2370, 90 2490, 210 2570 C 330 2650, 330 2730, 210 2810 C 90 2890, 90 3000, 210 3050");
+  offset-rotate: 0deg;
+  offset-anchor: center center;
+  animation: dotRide 1s linear both;
+  animation-timeline: --timeline-container;
+  animation-range: cover 5% cover 95%;
+}
+
+.timeline-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+.timeline-content {
+  width: 45%;
+}
+
+.row-left {
+  justify-content: flex-start;
+}
+
+.row-right {
+  justify-content: flex-end;
+}
+
+.timeline-time {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--register-button-color);
+  margin-bottom: 10px;
+}
+
+/* Card Styling & Continuous Float */
+.timeline-card {
+  position: relative;
+  background: var(--white-background);
+  padding: 32px;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  z-index: 1; /* Keeps content above the glow */
+  animation: floatCard 6s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Base outline on hover */
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  border: 1.5px solid rgba(37, 99, 235, 0.22);
+  opacity: 0;
+  transform: scale(0.97);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* The Glow Effect Layer */
+.timeline-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  box-shadow: 0 0 45px 15px rgba(37, 99, 235, 0.3), 0 0 20px 5px rgba(96, 165, 250, 0.4);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  will-change: opacity;
+}
+
+.timeline-card:hover::before,
+.timeline-card:focus-within::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.timeline-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  color: var(--logo-text-color);
+}
+
+.timeline-card p {
+  margin: 0;
+  color: var(--nav-links-font-color);
+  line-height: 1.6;
+}
+
+/* Scroll-Driven Glow Effect */
+@supports (animation-timeline: view()) {
+  .timeline-card::after {
+    /* Triggers exactly when the card reaches the vertical center of the screen */
+    animation: scrollGlow linear both;
+    animation-timeline: view();
+    animation-range: cover 35% cover 65%;
+  }
+}
+
+/* Keyframes */
+@keyframes threadFlow {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -200; }
+}
+
+@keyframes dotRide {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+
+/* Beautiful butter-smooth 2D float */
+@keyframes floatCard {
+  0% { transform: translate(0px, 0px); }
+  33% { transform: translate(4px, -5px); }
+  66% { transform: translate(-3px, 3px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/* The glow fades in perfectly at the center, then fades out */
+@keyframes scrollGlow {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* ===============================workshop section end here ============================*/
+
+
+
 /* footer section start here  */
 
 .footer-section-parent{
